@@ -1,0 +1,76 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+.directory
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+build/
+_build/
+target/
+
+# Logs
+*.log
+logs/
+
+# Results (generated)
+results/
+plots/
+
+# Certificate artifacts (generated)
+certs/
+*.pem
+*.key
+*.crt
+*.csr
+*.srl
+*.p12
+*.pfx
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+*~
+.cache/
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OpenSSL build artifacts
+openssl/
+liboqs/
+oqs-provider/
+
+# Open5GS build artifacts
+open5gs/
