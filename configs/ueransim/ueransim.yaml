@@ -1,0 +1,81 @@
+# UERANSIM Configuration for PQC-5G Experiments
+# Based on the paper's experimental setup
+
+# SIM card configuration
+mcc: 208
+mnc: 93
+
+# UE configuration
+nodes:
+  # gNodeB (RAN) configuration
+  - nci: 0x000000010
+    nciLength: 32
+    tac: 0x0001
+    defaultPduSessionType: IPv4
+    defaultQci: 9
+    ignoreAttachReject: false
+    
+    # AMF connection
+    amfAddress: 127.0.0.1
+    amfPort: 38412
+    amfRegionId: 1
+    amfSetId: 1
+    amfPointer: 1
+    
+    # SCTP for NGAP
+    sctpListenOn: 127.0.0.10
+    sctpPort: 38412
+    
+    # GTP-U for user plane
+    gtpListenOn: 127.0.0.10
+    gtpPort: 2152
+    
+    # Cell configuration
+    cells:
+      - nci: 0x000000001
+        nciLength: 28
+        tac: 0x0001
+        earfcn: 3350
+        earfcnOffset: 0
+        qrxlevmin: -140
+        cellBarred: false
+        cellReservedForOtherUse: false
+        
+# UE configuration
+ueCount: 10
+imsi: "208930000000001"
+key: "465B5CE8B199B49FAA5F0A2EE238A6BC"
+op: "E8ED289DEBA952E4283B54E88E6183CA"
+amf: "FF0000"
+autn: "1872b368b31fa2803b79628056230000"
+rand: "02474bf1d240e50143312b011e43d5ec1c"
+
+# DNN configuration
+dnnList:
+  - dnn: internet
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    pduSessionType: IPv4
+    sscMode: SSC1
+    default5QI: 9
+    defaultPriorityLevel: 10
+    
+# UE behavior
+tmsi: auto
+guti: auto
+mappedHplmn: auto
+
+# PDU session request interval (in ms)
+requestInterval: 0
+
+# PDU session establishment
+establishmentInfo:
+  sNssai:
+    sst: 1
+    sd: "010203"
+  dnn: internet
+
+# For varying UE count experiments
+# Set this in the experiment script:
+#   ueCount: <N> (where N is 1, 10, 20, ..., 120)

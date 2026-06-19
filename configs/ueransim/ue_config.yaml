@@ -1,0 +1,55 @@
+# UERANSIM UE Configuration Template
+# Used for generating multiple UE configurations for experiments
+
+# MCC and MNC
+mcc: 208
+mnc: 93
+
+# IMSI range (will be incremented for each UE)
+imsiStart: "208930000000001"
+imsiEnd: "208930000000100"  # Support up to 100 UEs
+
+# Authentication key (same for all UEs in simulation)
+key: "465B5CE8B199B49FAA5F0A2EE238A6BC"
+op: "E8ED289DEBA952E4283B54E88E6183CA"
+amf: "FF0000"
+autn: "1872b368b31fa2803b79628056230000"
+rand: "02474bf1d240e50143312b011e43d5ec1c"
+
+# Authentication method
+authMethod: "5G_AKA"
+
+# UE behavior
+requestType: "initial"
+requestInterval: 0  # ms between requests (0 = as fast as possible)
+
+# PDU Session configuration
+pduSession:
+  type: "IPv4"
+  sscMode: "SSC1"
+  dnn: "internet"
+  sNssai:
+    sst: 1
+    sd: "010203"
+  alwaysOn: true
+
+# QoS parameters
+defaultQci: 9
+defaultPriorityLevel: 10
+defaultApuAmbrUl: "1000 kbps"
+defaultApuAmbrDl: "1000 kbps"
+
+# T3512 timer (Periodic Registration Update) in seconds
+t3512: 3600
+
+# T3502 timer (Attempt Counter) in seconds  
+t3502: 720
+
+# Mobility (optional)
+mobility:
+  enabled: false
+  handoverInterval: 0  # ms
+
+# Registration deregistration interval for experiments
+# Each UE will deregister after this interval, then re-register
+deregistrationInterval: 10  # seconds (t in the paper)

@@ -1,0 +1,52 @@
+# Open5GS YAML Configuration with PQC support
+# This patch modifies the default Open5GS config to enable PQC TLS
+
+# For each NF, add these settings to enable PQC:
+#
+# 1. Set TLS certificate and key paths
+# 2. Configure PQC signature algorithms via environment variables
+# 3. Enable TLS for SBI interfaces
+
+# Example NF configuration snippet (e.g., for amf.yaml):
+#
+# amf:
+#   sbi:
+#     server:
+#       - address: 127.0.0.1
+#         port: 7777
+#     client:
+#       nrf:
+#         - uri: https://127.0.0.1:7777
+#   tls:
+#     enabled: true
+#     certfile: /etc/open5gs/tls/amf/tls.crt
+#     keyfile: /etc/open5gs/tls/amf/tls.key
+#     cacertfile: /etc/open5gs/tls/ca/ca_cert.pem
+
+# Environment variables for PQC (set before starting Open5GS):
+#
+# OQS_OPENSSL_CONF=/path/to/oqs-openssl.cnf
+# OPENSSL_CONF=/path/to/oqs-openssl.cnf
+#
+# The oqsprovider config should specify:
+# - Signature algorithms
+# - KEM algorithms
+# - Hybrid mode settings
+
+# Example oqs-openssl.cnf:
+#
+# openssl_conf = openssl_init
+#
+# [openssl_init]
+# provider_sect = provider_sect
+#
+# [provider_sect]
+# default = default_sect
+# oqs = oqs_sect
+#
+# [default_sect]
+# activate = 1
+#
+# [oqs_sect]
+# activate = 1
+# module = /usr/local/lib/liboqs-provider.so

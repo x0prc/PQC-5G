@@ -1,0 +1,54 @@
+# UERANSIM gNodeB Configuration
+# This file configures the gNodeB for the RAN simulation
+
+# gNodeB identity
+gnbId: 0x000000010
+gnbIdLength: 32
+
+# Tracking Area Code
+tac: 0x0001
+
+# PLMN
+mcc: 208
+mnc: 93
+
+# AMF connection
+ngapIpList:
+  - 127.0.0.10
+
+# GTP-U for user plane
+gtpIpList:
+  - 127.0.0.10
+
+# SCTP configuration
+sctp:
+  port: 38412
+
+# PDU Session configuration
+defaultPduSessionType: IPv4
+defaultQci: 9
+
+# Cell configuration
+cells:
+  - nci: 0x000000001
+    nciLength: 28
+    tac: 0x0001
+    earfcn: 3350
+    earfcnOffset: 0
+    qrxlevmin: -140
+    cellBarred: false
+    cellReservedForOtherUse: false
+    
+# Frequency bands
+frequencyBands:
+  - arfcn: 3350
+    band: 3
+
+# RRC configuration
+rrc:
+  t300: 1000  # ms
+  t301: 1000
+  t304: 1000
+  t310: 1000
+  t311: 1000
+  t319: 1000
