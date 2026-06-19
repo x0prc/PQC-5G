@@ -1,2 +1,2 @@
 # PQC-5G
-Implementations based on the paper at Paper: https://arxiv.org/abs/2512.20243
+Implementations based on the paper: https://arxiv.org/abs/2512.20243
