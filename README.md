@@ -1,6 +1,4 @@
 # PQC-5G
-<<<<<<< HEAD
-
 Implementation based on the paper: [Post-Quantum Cryptography in the 5G Core](https://arxiv.org/abs/2512.20243)
 
 ## Overview
@@ -45,8 +43,8 @@ Based on Table I from the paper:
 ### 1. Clone the repository
 
 ```bash
-`git clone https://github.com/x0prc/PQC-5G`
-`cd PQC-5G`
+git clone https://github.com/x0prc/PQC-5G
+cd PQC-5G
 ```
 
 ### 2. Run the setup script
@@ -122,6 +120,4 @@ The experiments measure:
 - UERANSIM: https://github.com/aligungr/UERANSIM
 - liboqs: https://github.com/open-quantum-safe/liboqs
 - oqs-provider: https://github.com/open-quantum-safe/openssl/tree/oqs-provider
-=======
-Implementations based on the paper: https://arxiv.org/abs/2512.20243
->>>>>>> 0914fa501f3f3ae18a7bf55cc9e7994cb62d8e57
+
